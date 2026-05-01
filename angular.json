@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "modztakt-promosite": {
+    "ModzTakt-website": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/modztakt-promosite",
+            "outputPath": "dist/ModzTakt-website",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
@@ -44,10 +44,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "modztakt-promosite:build:production"
+              "buildTarget": "ModzTakt-website:build:production"
             },
             "development": {
-              "buildTarget": "modztakt-promosite:build:development"
+              "buildTarget": "ModzTakt-website:build:development"
             }
           },
           "defaultConfiguration": "development"
