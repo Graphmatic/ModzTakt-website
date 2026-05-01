@@ -10,7 +10,7 @@ pnpm-debug.log*
 # =========================
 # Angular build output
 # =========================
-dist/
+# dist/
 out-tsc/
 .angular/
 .cache/
