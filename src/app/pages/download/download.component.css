@@ -1,0 +1,99 @@
+.download {
+  padding: 28px;
+  background: #51565e;
+}
+
+.download-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  background: #51565e;
+}
+
+.eyebrow {
+  margin: 18px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+
+.download h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.repo-link {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.12);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.release-list {
+  display: grid;
+  gap: 18px;
+}
+
+.release {
+  padding: 22px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.76);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.release-meta h2 {
+  margin: 0;
+}
+
+.release-meta p,
+.release-body {
+  color: var(--text-soft);
+}
+
+.assets {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.asset {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.asset span {
+  font-weight: 600;
+}
+
+.asset small {
+  color: var(--text-soft);
+}
+
+.asset.empty,
+.empty-state {
+  color: var(--text-soft);
+  padding: 18px;
+}
+
+@media (max-width: 760px) {
+  .download-header {
+    flex-direction: column;
+  }
+
+  .asset {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

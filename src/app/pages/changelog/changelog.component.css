@@ -1,0 +1,9 @@
+.changelog {
+  padding: 28px;
+  min-height: 320px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}

@@ -1,0 +1,47 @@
+<section class="container download panel">
+  <div class="download-header">
+    <div>
+      <p class="eyebrow">GitHub Releases</p>
+      <!-- <h1>Download the binaries</h1> -->
+      <!-- <p class="muted">
+        This page pulls the release list from the repository at runtime and shows each available asset as a direct download link.
+      </p> -->
+    </div>
+
+    <a class="repo-link" [href]="repositoryUrl" target="_blank" rel="noreferrer">Open releases on GitHub</a>
+  </div>
+
+  @if (releases$ | async; as releases) {
+    <div class="release-list">
+      @for (release of releases; track release.tag_name) {
+        <article class="release">
+          <div class="release-meta">
+            <h2>{{ release.name || release.tag_name }}</h2>
+            <p>Published {{ release.published_at | date:'mediumDate' }}</p>
+          </div>
+
+          <p class="release-body">{{ release.body || 'Release notes are not available for this version.' }}</p>
+
+          <div class="assets">
+            @for (asset of release.assets; track asset.browser_download_url) {
+              <a class="asset" [href]="asset.browser_download_url" target="_blank" rel="noreferrer">
+                <span>{{ asset.name }}</span>
+                <small>{{ asset.size / 1024 / 1024 | number:'1.1-1' }} MB</small>
+              </a>
+            }
+
+            @if (!release.assets.length) {
+              <div class="asset empty">No binary asset exposed for this release.</div>
+            }
+          </div>
+        </article>
+      }
+    </div>
+
+    @if (!releases.length) {
+      <div class="empty-state">
+        The release feed could not be loaded right now. The GitHub releases page is still linked above.
+      </div>
+    }
+  }
+</section>

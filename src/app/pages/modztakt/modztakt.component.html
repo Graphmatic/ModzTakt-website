@@ -1,0 +1,24 @@
+<section class="container intro panel">
+  <div class="intro-copy">
+    <h1>ModzTakt</h1>
+    <p class="lead">
+      ModzTakt application and VST3 plugin let you add MIDI modulation sources to Elektron Syntakt.
+    </p>
+    <p class="lead">Standalone version for Linux allows to records Syntakt audio channels exposed by the Overbridge driver.</p>
+  </div>
+
+</section>
+
+<section class="container story">
+  @for (section of sections; track section.title; let i = $index) {
+    <article class="story-row panel" [class.reverse]="section.reverse">
+      <div class="story-text">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.text }}</p>
+      </div>
+      <div class="story-media">
+        <img [src]="section.image" [alt]="section.imageAlt">
+      </div>
+    </article>
+  }
+</section>
